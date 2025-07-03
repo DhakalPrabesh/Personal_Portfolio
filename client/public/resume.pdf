@@ -1,0 +1,113 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 1000
+>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(Prabesh Dhakal - Resume) Tj
+0 -30 Td
+/F1 18 Tf
+(Business Analyst) Tj
+0 -50 Td
+/F1 12 Tf
+(Email: prabesh@example.com) Tj
+0 -20 Td
+(Phone: +81-XXX-XXXX-XXXX) Tj
+0 -20 Td
+(Location: Tokyo, Japan) Tj
+0 -40 Td
+/F1 16 Tf
+(EDUCATION) Tj
+0 -25 Td
+/F1 12 Tf
+(2023 - Chuo Information College, IT Department) Tj
+0 -20 Td
+(2020 - Saitama Japanese Language School) Tj
+0 -40 Td
+/F1 16 Tf
+(WORK EXPERIENCE) Tj
+0 -25 Td
+/F1 12 Tf
+(March 2023 - Present) Tj
+0 -20 Td
+(Ikebana Solutions LLC - Business Analyst) Tj
+0 -20 Td
+(• Requirements definition and documentation) Tj
+0 -15 Td
+(• Project management and team coordination) Tj
+0 -15 Td
+(• Quality assurance and UAT management) Tj
+0 -40 Td
+/F1 16 Tf
+(SKILLS) Tj
+0 -25 Td
+/F1 12 Tf
+(• Requirements Definition • UAT Management) Tj
+0 -15 Td
+(• Cross-cultural Management • Problem Solving) Tj
+0 -15 Td
+(• HTML/CSS/JavaScript • UiPath RPA) Tj
+0 -15 Td
+(• Excel VBA • GitHub) Tj
+0 -15 Td
+(• Japanese (Conversational) • English (Business)) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000279 00000 n 
+0000001331 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+1410
+%%EOF
