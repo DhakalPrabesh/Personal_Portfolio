@@ -90,6 +90,7 @@ This is a full-stack web application built as a personal portfolio website for a
 ```
 Changelog:
 - July 03, 2025. Initial setup
+- July 03, 2025. Completed bilingual portfolio website with English/Japanese toggle, resume page with PDF viewer, and professional design based on reference site
 ```
 
 ## User Preferences
