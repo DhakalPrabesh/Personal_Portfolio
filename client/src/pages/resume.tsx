@@ -55,7 +55,7 @@ export default function Resume() {
               <CardHeader className="text-center bg-gradient-to-r from-blue-50 to-indigo-50">
                 <div className="mb-4">
                   <img
-                    src="https://dhakalprabesh.github.io/IMG_5696%202.jpg"
+                    src=""
                     alt="Prabesh Dhakal"
                     className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
                   />
