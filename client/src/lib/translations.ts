@@ -22,13 +22,18 @@ export const translations = {
     // Education
     "education": "Education",
     "chuoInfoCollege": "Chuo Information College",
-    "itDepartment": "IT Department",
+    "itDepartment": "IT Department 2021 - 2023",
     "saitamaJapaneseSchool": "Saitama Japanese Language School",
-    "japaneseLanguage": "Japanese Language",
+    "japaneseLanguage": "Japanese Language 2019 - 2021",
+    "Bachelor Degree in Bachelor of Business Studies": "Caribbean College of Management",
+    "College Dropout": "Bachelor 2015 - 2019",
+    "Nightingale College": "Nightingale College ",
+    "High School": "High School 2014 - 2015",
+
     
     // Work Experience
     "workExperience": "Work Experience",
-    "ikebanaSolutions": "Ikebana Solutions LLC",
+    "ikebanaSolutions": "EKbana Solutions LLC",
     "fullTimeEmployee": "Full-time Employee",
     "march2023Present": "March 2023 - Present",
     "mainResponsibilities": "Main Responsibilities",
@@ -55,7 +60,7 @@ export const translations = {
     "frontendDev": "Frontend Development",
     "frontendDevDesc": "HTML / CSS / JavaScript for frontend development",
     "lowcodeDev": "Low-code Development",
-    "lowcodeDevDesc": "v0 (Low-code/No-code tool utilization)",
+    "lowcodeDevDesc": "v0 (Low-code/No-code tool utilization),Replit,Bolt,Lovable ai",
     "rpaAutomation": "RPA Automation",
     "rpaAutomationDesc": "UiPath for business process automation",
     "excelVBA": "Excel VBA",
@@ -63,7 +68,7 @@ export const translations = {
     "versionControl": "Version Control",
     "versionControlDesc": "GitHub for version control and collaboration",
     "languageSkills": "Language Skills",
-    "languageSkillsDesc": "Japanese (Conversational), English (Business Level)",
+    "languageSkillsDesc": "Japanese (Conversational), English (Business Level), Nepali (Mother Tongue), Hindi (Conversational)",  
     
     // Contact
     "contactInformation": "Contact Information",
@@ -108,6 +113,10 @@ export const translations = {
     "itDepartment": "IT学科",
     "saitamaJapaneseSchool": "埼玉日本語学校",
     "japaneseLanguage": "日本語",
+    "BachelorDegree ": "カリブアン大学",
+    "College Dropout": "退学 2015 - 2019",
+    "Nightingale College": "ナイチンゲール高校",
+    "High School": "高校 2014 - 2015",
     
     // Work Experience
     "workExperience": "職歴",
@@ -146,7 +155,7 @@ export const translations = {
     "versionControl": "バージョン管理",
     "versionControlDesc": "GitHub を使用したバージョン管理とコラボレーション",
     "languageSkills": "言語スキル",
-    "languageSkillsDesc": "日本語（日常会話レベル）、英語（ビジネスレベル）",
+    "languageSkillsDesc": "日本語（日常会話レベル）、英語（ビジネスレベル）、ネパール語（母国語）、インド語（日常会話レベル）",
     
     // Contact
     "contactInformation": "連絡先情報",
@@ -155,18 +164,19 @@ export const translations = {
     "yourEmail": "メールアドレス",
     "yourMessage": "メッセージ",
     "sendBtn": "送信",
-    "tokyoJapan": "日本、東京",
+    "tokyoJapan": "東京、日本",
     
     // Resume
     "resume": "履歴書",
     "download": "ダウンロード",
-    "resumePageTitle": "履歴書 - プラベッシュ ダカール",
+    "resumePageTitle": "履歴書 - プラベス ダカル",
     
     // Footer
-    "copyright": "© 2024 プラベッシュ ダカール. All rights reserved."
+    "copyright": "© 2024 プラベス ダカル. All rights reserved."
   }
 } as const;
 
 export function getTranslation(key: string, language: "en" | "ja"): string {
-  return translations[language][key as keyof typeof translations.en] || key;
+  const translationKeys = key as keyof typeof translations[typeof language];
+  return translations[language][translationKeys] || key;
 }

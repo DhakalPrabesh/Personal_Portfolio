@@ -42,7 +42,7 @@ export function EducationSection() {
                 </div>
                 <div className="text-right">
                   <Badge variant="default" className="bg-emerald-500 text-white">
-                    2020
+                    2021
                   </Badge>
                 </div>
               </div>

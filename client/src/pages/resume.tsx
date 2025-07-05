@@ -10,10 +10,10 @@ export default function Resume() {
   const { language } = useLanguage();
 
   const handleDownload = () => {
-    // Create a link to download the PDF
+    // Create a link to download the Png
     const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "Prabesh_Dhakal_Resume.pdf";
+    link.href = "/CV.png";
+    link.download = "Prabesh_Dhakal_Resume.png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -61,108 +61,19 @@ export default function Resume() {
                   />
                 </div>
                 <CardTitle className="text-3xl font-bold text-slate-800">
-                  {language === "ja" ? "プラベッシュ ダカール" : "Prabesh Dhakal"}
+                  {language === "ja" ? "プラベス ダカル" : "Prabesh Dhakal"}
                 </CardTitle>
                 <p className="text-slate-600 mt-2">
                   {language === "ja" ? "ビジネスアナリスト" : "Business Analyst"}
                 </p>
               </CardHeader>
               <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Education */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-800 mb-4 border-b pb-2">
-                      {getTranslation("education", language)}
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="bg-slate-50 p-4 rounded-lg">
-                        <h4 className="font-semibold text-slate-800">
-                          {getTranslation("chuoInfoCollege", language)}
-                        </h4>
-                        <p className="text-slate-600 text-sm">
-                          {getTranslation("itDepartment", language)} (2023)
-                        </p>
-                      </div>
-                      <div className="bg-slate-50 p-4 rounded-lg">
-                        <h4 className="font-semibold text-slate-800">
-                          {getTranslation("saitamaJapaneseSchool", language)}
-                        </h4>
-                        <p className="text-slate-600 text-sm">
-                          {getTranslation("japaneseLanguage", language)} (2020)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Work Experience */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-800 mb-4 border-b pb-2">
-                      {getTranslation("workExperience", language)}
-                    </h3>
-                    <div className="bg-slate-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-slate-800">
-                        {getTranslation("ikebanaSolutions", language)}
-                      </h4>
-                      <p className="text-slate-600 text-sm mb-2">
-                        {getTranslation("fullTimeEmployee", language)} ({getTranslation("march2023Present", language)})
-                      </p>
-                      <p className="text-xs text-slate-600">
-                        {language === "ja" 
-                          ? "ビジネスアナリストとして、クライアントと開発チーム間の調整、要件定義、UAT管理を担当"
-                          : "As a Business Analyst, responsible for coordination between clients and development teams, requirements definition, and UAT management."
-                        }
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Skills */}
-                  <div className="md:col-span-2">
-                    <h3 className="text-xl font-semibold text-slate-800 mb-4 border-b pb-2">
-                      {getTranslation("skills", language)}
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold text-slate-800 mb-2">
-                          {getTranslation("businessSkills", language)}
-                        </h4>
-                        <ul className="text-sm text-slate-600 space-y-1">
-                          <li>• {getTranslation("requirementsDefinition", language)}</li>
-                          <li>• {getTranslation("uatManagement", language)}</li>
-                          <li>• {getTranslation("taskCoordination", language)}</li>
-                          <li>• {getTranslation("crossCulturalManagement", language)}</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-slate-800 mb-2">
-                          {getTranslation("technicalSkills", language)}
-                        </h4>
-                        <ul className="text-sm text-slate-600 space-y-1">
-                          <li>• HTML/CSS/JavaScript</li>
-                          <li>• UiPath (RPA)</li>
-                          <li>• Excel VBA</li>
-                          <li>• GitHub</li>
-                          <li>• {getTranslation("languageSkillsDesc", language)}</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Contact */}
-                  <div className="md:col-span-2">
-                    <h3 className="text-xl font-semibold text-slate-800 mb-4 border-b pb-2">
-                      {getTranslation("contactInformation", language)}
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
-                      <div>
-                        <p><strong>Email:</strong> prabesh@example.com</p>
-                        <p><strong>Phone:</strong> +81-XXX-XXXX-XXXX</p>
-                      </div>
-                      <div>
-                        <p><strong>GitHub:</strong> github.com/dhakalprabesh</p>
-                        <p><strong>Location:</strong> {getTranslation("tokyoJapan", language)}</p>
-                      </div>
-                    </div>
-                  </div>
+                <div className="flex justify-center items-center">
+                  <img
+                    src="/CV.png"
+                    alt="Resume"
+                    className="max-w-full h-auto shadow-lg rounded-lg"
+                  />
                 </div>
               </CardContent>
             </Card>

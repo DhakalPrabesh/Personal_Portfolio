@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export function ContactSection() {
   const { language } = useLanguage();
@@ -43,15 +43,19 @@ export function ContactSection() {
                 <div className="space-y-4 text-left">
                   <div className="flex items-center">
                     <Mail className="text-primary mr-3" size={20} />
-                    <span className="text-slate-600">prabesh@example.com</span>
+                    <span className="text-slate-600">ek.prabeshdhakal@gmail.com</span>
                   </div>
                   <div className="flex items-center">
                     <Phone className="text-primary mr-3" size={20} />
-                    <span className="text-slate-600">+81-XXX-XXXX-XXXX</span>
+                    <span className="text-slate-600">+81-70-8348-4042</span>
                   </div>
                   <div className="flex items-center">
                     <FaGithub className="text-primary mr-3" size={20} />
                     <span className="text-slate-600">github.com/dhakalprabesh</span>
+                  </div>
+                  <div className="flex items-center">
+                    <FaLinkedin className="text-primary mr-3" size={20} />
+                    <span className="text-slate-600">www.linkedin.com/in/prabesh-dhakal-34017626a</span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="text-primary mr-3" size={20} />

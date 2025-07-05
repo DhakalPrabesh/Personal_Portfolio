@@ -20,7 +20,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
             <div className="text-xl font-bold text-slate-800">
-              {language === "ja" ? "プラベッシュ ダカール" : "Prabesh Dhakal"}
+              {language === "ja" ? "プラベス ダカル" : "Prabesh Dhakal"}
             </div>
             <div className="flex items-center space-x-4">
               <Link href="/resume">
