@@ -12,8 +12,8 @@ export default function Resume() {
   const handleDownload = () => {
     // Create a link to download the Png
     const link = document.createElement("a");
-    link.href = "/CV.png";
-    link.download = "Prabesh_Dhakal_Resume.png";
+    link.href = "/Resume.pdf";
+    link.download = "Prabesh_Dhakal_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -55,7 +55,7 @@ export default function Resume() {
               <CardHeader className="text-center bg-gradient-to-r from-blue-50 to-indigo-50">
                 <div className="mb-4">
                   <img
-                    src=""
+                    src="prabesh007.png"
                     alt="Prabesh Dhakal"
                     className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
                   />
@@ -69,10 +69,10 @@ export default function Resume() {
               </CardHeader>
               <CardContent className="p-8">
                 <div className="flex justify-center items-center">
-                  <img
-                    src="/CV.png"
-                    alt="Resume"
-                    className="max-w-full h-auto shadow-lg rounded-lg"
+                  <iframe
+                    src="/Resume.pdf"
+                    title="Resume PDF"
+                    className="w-full h-[80vh] shadow-lg rounded-lg border"
                   />
                 </div>
               </CardContent>
