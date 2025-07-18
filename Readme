@@ -111,3 +111,221 @@ Make sure to:
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+## Why This Happens
+
+- **GitHub Pages** only serves static files (HTML, CSS, JS, images, etc.) from a specific branch (usually `main` or `gh-pages`).
+- It **does not run Node.js/Express servers** or build Vite/React projects on the fly.
+- If you only have your source code (React, Express, etc.) in the repo, but not the built static files (like `index.html` and assets in a `dist` or `build` folder), GitHub Pages will show a 404 error.
+- If you previously saw your README as the site, you likely had a Markdown-based site (Jekyll default) or no build output.
+
+---
+
+## How to Fix It
+
+### 1. **Build Your React App for Production**
+
+You need to generate static files for your React app:
+
+```sh
+cd client
+npm run build
+```
+
+This will create a `dist` or `build` folder (depending on your setup) with static files.
+
+---
+
+### 2. **Move the Build Output to the Root (or Set GitHub Pages Source)**
+
+- By default, GitHub Pages serves from the root or `/docs` folder.
+- You need to copy the contents of your build output (e.g., `client/dist` or `client/build`) to the root of your repository or to a `/docs` folder.
+
+**Recommended for Vite/React:**
+- Move the contents of `client/dist` to a folder called `docs` in your repo root.
+
+```sh
+# From your project root
+mkdir docs
+cp -r client/dist/* docs/
+```
+
+- Commit and push these changes.
+
+---
+
+### 3. **Configure GitHub Pages to Use the `/docs` Folder**
+
+- Go to your repository on GitHub.
+- Click **Settings** > **Pages**.
+- Under **Source**, select the `main` branch and `/docs` folder.
+- Save.
+
+---
+
+### 4. **Add a `.nojekyll` File**
+
+To prevent GitHub Pages from processing your site with Jekyll (which can break React/Vite apps), add an empty file called `.nojekyll` to the `/docs` folder.
+
+```sh
+touch docs/.nojekyll
+```
+
+Commit and push this file.
+
+---
+
+### 5. **Check Your Asset Paths**
+
+- Make sure all your static asset paths are **relative** or use the correct base path.
+- In `vite.config.ts`, set the `base` option if your site is not at the root (e.g., `/Personal_Portfolio/`):
+
+```js
+// vite.config.ts
+export default defineConfig({
+  base: '/Personal_Portfolio/',
+  // ...other config
+});
+```
+- Rebuild after changing this.
+
+---
+
+## Summary Checklist
+
+1. Build your React app (`npm run build` in `client`).
+2. Copy the build output to `/docs` in the repo root.
+3. Add a `.nojekyll` file to `/docs`.
+4. Set GitHub Pages source to `/docs` in repo settings.
+5. Set the correct `base` in `vite.config.ts` if needed.
+6. Commit and push all changes.
+
+---
+
+## References
+
+- [GitHub Pages 404 Troubleshooting](https://docs.github.com/en/pages/getting-started-with-github-pages/troubleshooting-404-errors-for-github-pages-sites)
+- [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+---
+
+**If you follow these steps, your React site should be visible on GitHub Pages!**  
+Let me know if you need a step-by-step command sequence or help with the `vite.config.ts`!
+
+---
+
+## 1. **Set the Correct `base` in `vite.config.ts`**
+
+Since your GitHub Pages URL is:
+```
+https://dhakalprabesh.github.io/Personal_Portfolio/
+```
+You **must** set the `base` option in your `vite.config.ts` to `/Personal_Portfolio/`:
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+// ...other imports
+
+export default defineConfig({
+  base: '/Personal_Portfolio/',
+  // ...other config
+});
+```
+
+---
+
+## 2. **Use Correct Asset Paths**
+
+- For images and static files, always use **relative paths** or the full base path.
+- In your code, change:
+  ```tsx
+  <img src="/prabesh007.png" ... />
+  ```
+  to:
+  ```tsx
+  <img src="prabesh007.png" ... />
+  ```
+  or, if the image is in `public`, use:
+  ```tsx
+  <img src={`${import.meta.env.BASE_URL}prabesh007.png`} ... />
+  ```
+- For the PDF:
+  ```tsx
+  <iframe src={`${import.meta.env.BASE_URL}Resume.pdf`} ... />
+  ```
+
+---
+
+## 3. **Build and Deploy to `/docs` Folder**
+
+1. **Build your app:**
+   ```sh
+   cd client
+   npm run build
+   ```
+
+2. **Copy the build output to `/docs` in your repo root:**
+   ```sh
+   mkdir -p ../docs
+   cp -r dist/* ../docs/
+   ```
+
+3. **Add a `.nojekyll` file to `/docs`:**
+   ```sh
+   touch ../docs/.nojekyll
+   ```
+
+4. **Commit and push:**
+   ```sh
+   cd ..
+   git add docs
+   git commit -m "Deploy static site to docs for GitHub Pages"
+   git push
+   ```
+
+---
+
+## 4. **Set GitHub Pages Source**
+
+- Go to your repo’s **Settings > Pages**.
+- Set the source to `main` branch, `/docs` folder.
+
+---
+
+## 5. **Summary of Code Changes**
+
+- Update `vite.config.ts` with the correct `base`.
+- Use `${import.meta.env.BASE_URL}` for all static asset references in your React code.
+- Make sure your `docs` folder contains the built static files and `.nojekyll`.
+
+---
+
+## Example: Fixing Asset References in `resume.tsx`
+
+```tsx
+<img
+  src={`${import.meta.env.BASE_URL}prabesh007.png`}
+  alt="Prabesh Dhakal"
+  className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
+/>
+
+<iframe
+  src={`${import.meta.env.BASE_URL}Resume.pdf`}
+  title="Resume PDF"
+  className="w-full h-[80vh] shadow-lg rounded-lg border"
+/>
+```
+
+---
+
+## References
+
+- [GitHub Pages 404 Troubleshooting](https://docs.github.com/en/pages/getting-started-with-github-pages/troubleshooting-404-errors-for-github-pages-sites)
+- [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+---
+
+**If you want, I can generate the exact code edits for your files. Let me know if you want to proceed with that!**

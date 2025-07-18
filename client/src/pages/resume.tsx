@@ -55,7 +55,7 @@ export default function Resume() {
               <CardHeader className="text-center bg-gradient-to-r from-blue-50 to-indigo-50">
                 <div className="mb-4">
                   <img
-                    src="prabesh007.png"
+                    src={`${import.meta.env.BASE_URL}prabesh007.png`}
                     alt="Prabesh Dhakal"
                     className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
                   />
@@ -70,7 +70,7 @@ export default function Resume() {
               <CardContent className="p-8">
                 <div className="flex justify-center items-center">
                   <iframe
-                    src="/Resume.pdf"
+                    src={`${import.meta.env.BASE_URL}Resume.pdf`}
                     title="Resume PDF"
                     className="w-full h-[80vh] shadow-lg rounded-lg border"
                   />
